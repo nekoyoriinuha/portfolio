@@ -1,0 +1,58 @@
+$xl_pc: 1520px; //PC 1520
+$l_pc: 1280px; // PC 1280
+$pc: 1024px; // PC
+$s_pc: 980px; // PC 960
+//$tablet: 768px; // タブレット
+$l_tablet: 768px; //タブレット 768
+$tablet: 640px; // タブレット
+$s_tablet: 480px; // タブレット小
+$sp: 375px;  // スマホ
+$s_sp: 360px;  // スマホ小
+
+
+@mixin xl_pc {
+  @media (max-width: ($xl_pc)) {
+    @content;
+  }
+}
+@mixin l_pc {
+  @media (max-width: ($l_pc)) {
+    @content;
+  }
+}
+@mixin pc {
+  @media (max-width: ($pc)) {
+    @content;
+  }
+}
+@mixin s_pc {
+  @media (max-width: ($s_pc)) {
+    @content;
+  }
+}
+@mixin l_tablet {
+  @media (max-width: ($l_tablet)) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (max-width: ($tablet)) {
+    @content;
+  }
+}
+@mixin s_tablet {
+  @media (max-width: ($s_tablet)) {
+    @content;
+  }
+}
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}
+
+@mixin s_sp {
+  @media (max-width: ($s_sp)) {
+    @content;
+  }
+}

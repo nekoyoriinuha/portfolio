@@ -1,12 +1,293 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Example Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="猫より犬派のためのサイト">
+  <meta name="keywords" content="猫より犬派">
+  <title>portfolio</title>
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="./js/func.js"></script>
+  <script src="./js/nekosearch.js"></script>
+  <script src="./js/rojineco.js"></script>
 </head>
 <body>
-    <h1>Hello GitHub.io !!</h1>
+  <header class="header">
+    <h1 class="header__ttl">
+      <a href="#">
+        <img src="./images/svg/logo.svg" alt="home">
+      </a>
+    </h1>
+    <nav class="header__nav drawer">
+      <input id="drawer-toggle" type="checkbox" />
+      <label class="drawer__btn" for="drawer-toggle">
+        <span></span>
+      </label>
+      <div class="header__navList drawer__box">
+        <div class="header__navListItem header__navListItem--onlySp">
+          <a href="#">
+            <div>TOP</div>
+          </a>
+        </div>
+        <div class="header__navListItem">
+          <a href="#rojineco">
+            <div>ロジねこ</div>
+          </a>
+        </div>
+        <div class="header__navListItem">
+          <a href="#search">
+            <div>ネコサーチ</div>
+          </a>
+        </div>
+        <div class="header__navListItem">
+          <a href="#info">
+            <div>インフォメーション</div>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="fv">
+      <div class="fv__inner">
+        <div class="fv__video">
+          <video autoplay muted loop>
+            <source src="./video/fv.mp4" type="video/mp4">
+          </video>
+          <div class="fv__catch anim-text">
+            <div class="fv__catchBox anim-text__box" data-delay="500">
+              <p class="fv__catchText anim-text__text">NO&nbsp;LIFE</p>
+              <span class="fv__catchLine anim-text__underline"></span>
+            </div>
+            <div class="fv__catchBox anim-text__box" data-delay="1500">
+              <p class="fv__catchText anim-text__text">NO&nbsp;CAT</p>
+              <span class="fv__catchLine anim-text__underline"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   <section id="rojineco" class="rojineco">
+      <div class="container">
+        <h1 class="ttl">
+          <div class="ttl__text">ロジねこ</div>
+          <span class="ttl__text--ruby">rojineco</span>
+        </h1>
+        <div class="rojineco__catch catch">
+          <h2 class="catch__text">
+            <b class="catch__text--emphasis">みんなが撮った路地猫写真</b>
+            アプリから投稿された写真を掲載しています
+          </h2>
+        </div>
+      </div>
+      <div class="rojineco__box">
+        <ul id="rojineco-list" class="rojineco__list"></ul>
+        <div id="rojineco-btn" class="rojineco__btn"></div>
+      </div>
+    </section>
+    <section id="search" class="search">
+      <div class="container">
+        <h1 class="ttl">
+          <div class="ttl__text">ネコサーチ</div>
+          <span class="ttl__text--ruby">cat&nbsp;search</span>
+        </h1>
+        <div class="search__catch">
+          <h2 class="catch__text">
+            <b class="catch__text--emphasis">大切な家族と、再会するために。</b>
+            迷子になってしまった猫や保護した猫の情報
+          </h2>
+        </div>
+      </div>
+      <div class="search__box">
+        <div class="container">
+          <div class="search__subttl search__subttl--orange">
+            <h3 class="search__subttlText">
+              迷子猫情報
+            </h3>
+          </div>
+        </div>
+        <div class="search__list">
+          <div id="cat_slider" class="search__slider">
+          </div>
+        </div>
+      </div>
+      <div class="search__box">
+        <div class="container">
+          <div class="search__subttl search__subttl--green">
+            <h3 class="search__subttlText">保護猫情報</h3>
+          </div>
+        </div>
+        <div class="search__list">
+          <div id="cat_slider2" class="search__slider">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="info" class="info">
+      <div class="container">
+        <h1 class="ttl">
+          <div class="ttl__text">各種関連情報</div>
+          <span class="ttl__text--ruby">information</span>
+        </h1>
+        <div class="info__box">
+          <div class="info__boxItem">
+            <h2 class="info__subttl">
+              省庁・行政機関
+            </h2>
+            <ul class="info__list">
+              <li class="info__listItem">
+                <a href="https://www.npa.go.jp/bureau/soumu/ishitsubutsu/ishitsu-todokedekensaku.html#kensaku" target="_blank" rel="noopener">
+                  都道府県警察における遺失物の公表ページ
+                </a>
+              </li>
+              <li class="info__listItem">
+                <a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/hokenjo/index.html" target="_blank" rel="noopener">
+                  厚生労働省&nbsp;保健所管轄区域案内
+                </a>
+              </li>
+              <li class="info__listItem">
+                <a href="https://www.env.go.jp/nature/dobutsu/aigo/shuyo/" target="_blank" rel="noopener">
+                  環境省&nbsp;収容動物データ検索サイト
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="info__boxItem">
+            <h2 class="info__subttl">
+              迷子猫の探し方
+            </h2>
+            <ul class="info__list">
+              <li class="info__listItem">
+                <a href="https://getnews.jp/archives/298456" target="_blank" rel="noopener">
+                  迷子猫を探し出すコツ – ガジェット通信
+                </a>
+              </li>
+              <li class="info__listItem">
+                <a href="https://allabout.co.jp/gm/gc/68923/" target="_blank" rel="noopener">
+                  猫が帰って来ない・・その時あなたは　迷い猫の探し方 [猫] All About
+                </a>
+              </li>
+              <li class="info__listItem">
+                <a href="https://allabout.co.jp/gm/gc/31824/1/" target="_blank" rel="noopener">
+                  迷子猫、脱走猫の探し方と防ぎ方 [猫] All About
+                </a>
+              </li>
+              <li class="info__listItem">
+                <a href="https://necotex.net/?mode=f4" target="_blank" rel="noopener">
+                  迷子猫の捜索方法
+                </a>
+              </li>
+              <li class="info__listItem">
+                <a href="https://necotex.net/?mode=f4" target="_blank" rel="noopener">
+                  迷い猫の探し方｜迷い猫、迷子犬のポスター・チラシ制作なら- ねこてっくす
+                </a>
+              </li>
+              <li class="info__listItem">
+                <a href="http://maigo-pet.seesaa.net/article/114460175.html" target="_blank" rel="noopener">
+                  迷子犬・迷い猫の探し方: その１ いつもの散歩コース、ご近所を探す
+                </a>
+              </li>
+              <li class="info__listItem">
+                <a href="http://www.mayoi-neko.net/article/column/10111.html" target="_blank" rel="noopener">
+                  【第2回】迷子になったとき、最初にするべきこと
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="info__boxItem">
+            <h2 class="info__subttl">
+              迷子掲示板
+            </h2>
+            <ul class="info__list">
+              <li class="info__listItem">
+                <a href="https://mayoi-neko.net/" target="_blank" rel="noopener">
+                  迷い猫.NET／迷子猫・迷子犬／迷子ペット捜索情報ネット
+                </a>
+              </li>
+              <li class="info__listItem">
+                <a href="https://www.vets.ne.jp/bbs/c_6102.cgi" target="_blank" rel="noopener">
+                  迷子猫・保護猫掲示板[獣医師広報板]
+                </a>
+              </li>
+              <li class="info__listItem">
+                <a href="https://www.neko-jirushi.com/maigo/" target="_blank" rel="noopener">
+                  迷子ネコ掲示板 - 飼い猫を探しています - ネコジルシ
+                </a>
+              </li>
+              <li class="info__listItem">
+                <a href="https://bbs2.sekkaku.net/bbs/maigo/" target="_blank" rel="noopener">
+                  全国迷子犬・猫の掲示板
+                </a>
+              </li>
+              <li class="info__listItem">
+                <a href="https://www.facebook.com/maigopet" target="_blank" rel="noopener">
+                  迷子ペット回覧板[facebookページ]
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="info__boxItem">
+            <h2 class="info__subttl">
+              里親募集サイト<br><small>(迷子の猫が保護されている場合もあります。)</small>
+            </h2>
+            <ul class="info__list">
+              <li class="info__listItem">
+                <a href="https://tokyocatguardian.org/cat/" target="_blank" rel="noopener">
+                  猫の里親募集 - NPO法人 東京キャットガーディアン～子猫の里親募集～
+                </a>
+              </li>
+              <li class="info__listItem">
+                <a href="http://www.moraineko.net/" target="_blank" rel="noopener">
+                  もらい猫.NET／猫と犬、その他の動物の里親募集掲示板サイト
+                </a>
+              </li>
+              <li class="info__listItem">
+                <a href="https://satooya.wancat.info/" target="_blank" rel="noopener">
+                  『ペットの命』犬・猫 ペットの里親募集＆迷子情報サイト
+                </a>
+              </li>
+              <li class="info__listItem">
+                <a href="https://www.npo-nekoya.com/" target="_blank" rel="noopener">
+                  猫の里親を行っております｜NPO法人ねこ家
+                </a>
+              </li>
+              <li class="info__listItem">
+                <a href="https://www.pet-home.jp/cats/" target="_blank" rel="noopener">
+                  猫・里親・募集・掲示板～ペットショップ保健所へ行く前に～
+                </a>
+              </li>
+              <li class="info__listItem">
+                <a href="https://www.lifeboat.or.jp/satooya/cat/cats.htm" target="_blank" rel="noopener">
+                  里親さんを待っている猫たち - NPO法人犬と猫のためのライフボート
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!--
+  <aside>
+    sub
+  </aside>
+-->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__copy">
+        © 2024 NekoyoriInuha
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

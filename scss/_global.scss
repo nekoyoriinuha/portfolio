@@ -1,0 +1,87 @@
+@font-face {
+  font-family: 'icomoon';
+  src:
+    url('../fonts/icomoon.ttf?wk9eel') format('truetype'),
+    url('../fonts/icomoon.woff?wk9eel') format('woff'),
+    url('../fonts/icomoon.svg?wk9eel#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+body{
+  font-family: "Noto Sans JP", serif;
+}
+.container{
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  @include tablet {
+    padding: 0 2.67vw;
+  }
+}
+
+.ttl{
+  &__text{
+    font-size: 96px;
+    font-family: "Noto Sans JP", serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    text-align: center;
+    @include pc {
+      font-size: calcvw(96,pc);
+    }
+    @include l_tablet {
+      font-size: calcvw(96,tablet);
+    }
+    &--ruby{
+      font-size: 48px;
+      font-family: "Roboto", serif;
+      font-weight: 700;
+      text-align: center;
+      display: block;
+      @include pc {
+        font-size: calcvw(48,pc);
+      }
+      @include l_tablet {
+        font-size: calcvw(48,tablet);
+      }
+    }
+  }
+}
+
+.catch{
+  margin-top: 30px;
+  @include l_tablet {
+    margin-top: 15px;
+  }
+  &__text{
+    font-size: 16px;
+    text-align: center;
+    @include pc {
+      font-size: calcvw(16,pc);
+    }
+    @include l_tablet {
+      font-size: calcvw(16,tablet);
+    }
+    @include s_tablet {
+      font-size: calcvw(16,480);
+    }
+    &--emphasis{
+      margin-bottom: 10px;
+      font-size: 24px;
+      display: block;
+      @include pc {
+        font-size: calcvw(24,pc);
+      }
+      @include l_tablet {
+        font-size: calcvw(24,tablet);
+      }
+      @include s_tablet {
+        font-size: calcvw(24,480);
+      }
+    }
+  }
+}
